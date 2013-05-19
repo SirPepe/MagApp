@@ -1,0 +1,166 @@
+/*
+ * Seiten-Umschalter
+ * -----------------
+ */
+body, html {
+	overflow: hidden;
+	height: 100%;
+}
+#Content {
+	height: 100%;
+	position: relative;
+	transition: all 700ms;
+}
+.chapter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+
+/*
+ * Schönere Titel
+ * --------------
+ */
+
+/* Mercury */
+#Mercury .header {
+	background-image: url(img/MercuryTitle.jpg);
+}
+#Mercury .header span {
+	color: white;
+	background: rgba(0, 0, 0, 0.4);
+	display: inline-block;
+}
+
+/* Gemini */
+#Gemini .header {
+	background-image: url(img/GeminiTitle.jpg);
+}
+#Gemini .header span {
+	color: black;
+	background: rgba(255, 255, 255, 0.4);
+	display: inline-block;
+}
+
+/* Apollo */
+#Apollo .header {
+	background-image: url(img/ApolloTitle.jpg);
+}
+#Apollo .header span {
+	color: white;
+	background: rgba(0, 0, 0, 0.555);
+	display: inline-block;
+}
+
+/* Allgemeines Tuning */
+.header {
+	background-size: cover;
+	background-position: top center;
+	padding: 2.5em 0;
+}
+
+
+
+/*
+ * Detailtypografie
+ * ----------------
+ */
+
+/* Bildunterschriften */
+figcaption {
+	font-style: italic;
+}
+
+/* Schönere Schriftarten */
+html {
+	font-family: "PT Serif", "Times News Roman", serif;
+}
+.header {
+	font-family: "Archivo Narrow", Arial, sans-serif;
+}
+
+/* Ligaturen und Silbentrennung */
+.chapter {
+	text-rendering: optimizeLegibility;
+	hyphens: auto;
+}
+
+/* Initial */
+.chapter .header + p:first-letter {
+	float: left;
+	font-size: 4.25em;
+	line-height: 1.1;
+	margin-right: 0.2em;
+}
+
+
+
+/*
+ * Anpassung für schmalere Bildschirme
+ * -----------------------------------
+ */
+
+/* Schriftgröße justieren */
+@media screen and (max-width: 320px){
+	body {
+		font-size: 1.5rem;
+	}
+}
+@media screen and (max-width: 480px){
+	body {
+		font-size: 1.25rem;
+	}
+}
+@media screen and (min-width: 800px){
+	body {
+		font-size: 0.95rem;
+	}
+}
+
+/* Bilder über volle Breite */
+@media screen and (max-width: 600px){
+	figure {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
+
+/*
+ * Basis-Styles
+ * ------------
+ */
+
+/* Schrift-Grundlagen */
+html {
+	font-size: 2.8vmin;
+	line-height: 1.65;
+}
+
+/* Titel */
+h2 {
+	font-size: 5em;
+	line-height: 1.25;
+	margin-top: 0.75em;
+}
+.header {
+	height: 100vh;
+	position: relative;
+}
+.header p {
+	font-size: 1.7em;
+	line-height: 1.5;
+	position: absolute;
+	bottom: 1.25em;
+}
+figure figcaption {
+	font-size: 0.8em;
+}

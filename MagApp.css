@@ -2,23 +2,58 @@
  * Seiten-Umschalter
  * -----------------
  */
-body, html {
-	overflow: hidden;
-	height: 100%;
+
+/* Einfacher Umschalter (deaktiviert) */
+/*.chapter {
+	display: none;
 }
-#Content {
-	height: 100%;
-	position: relative;
-	transition: all 700ms;
+.chapter.current {
+	display: block;
 }
+.chapter.current ~ .chapter {
+	display: none;
+}*/
+
+/* Schöner Umschalter, Schritt 1: Kapitel anordnen */
 .chapter {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1;
-	height: 100%;
+}
+
+/* Schöner Umschalter, Schritt 2: Kapitelhöhe limitieren */
+body, html {
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+}
+.chapter {
+	height: 100vh;
+	width: 100vw;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+}
+
+/* Schöner Umschalter, Schritt 3: Transformation */
+main {
+	perspective: 5000px;
+	height: 100%;
+	width: 100%;
+}
+.chapter {
+	transform: translateX(-60%) rotateY(90deg);
+}
+.chapter.current {
+	transform: none;
+}
+.chapter.current ~ .chapter {
+	transform: translateX(60%) rotateY(-90deg);
+}
+
+/* Schöner Umschalter, Schritt 4: Transition */
+.chapter {
+	transition: all 900ms ease-in-out;
+	background: white;
 }
 
 
@@ -31,38 +66,58 @@ body, html {
 /* Mercury */
 #Mercury .header {
 	background-image: url(img/MercuryTitle.jpg);
+	background-position: center top;
 }
 #Mercury .header span {
 	color: white;
 	background: rgba(0, 0, 0, 0.4);
-	display: inline-block;
 }
 
 /* Gemini */
 #Gemini .header {
 	background-image: url(img/GeminiTitle.jpg);
+	background-position: 50% 20%;
 }
 #Gemini .header span {
 	color: black;
 	background: rgba(255, 255, 255, 0.4);
-	display: inline-block;
 }
 
 /* Apollo */
 #Apollo .header {
 	background-image: url(img/ApolloTitle.jpg);
+	background-position: 50% 10%;
 }
 #Apollo .header span {
 	color: white;
 	background: rgba(0, 0, 0, 0.555);
-	display: inline-block;
 }
 
-/* Allgemeines Tuning */
+/* Space Shuttle */
+#SpaceShuttle .header {
+	background-image: url(img/ShuttleTitle.jpg);
+	background-position: center center;
+}
+#SpaceShuttle .header span {
+	color: white;
+	background: rgba(0, 0, 0, 0.555);
+}
+
+/* Allgemeines Tuning: Header */
 .header {
+	height: 85vh;
 	background-size: cover;
-	background-position: top center;
-	padding: 2.5em 0;
+}
+
+/* Allgemeines Tuning: Header-Text */
+.header p {
+	font-size: 1.6em;
+	line-height: 1.5;
+	position: absolute;
+	bottom: 0.5em;
+}
+.header span {
+	padding: 0.2rem 0.8rem;
 }
 
 
@@ -71,11 +126,6 @@ body, html {
  * Detailtypografie
  * ----------------
  */
-
-/* Bildunterschriften */
-figcaption {
-	font-style: italic;
-}
 
 /* Schönere Schriftarten */
 html {
@@ -99,6 +149,10 @@ html {
 	margin-right: 0.2em;
 }
 
+/* Bildunterschriften */
+figcaption {
+	font-style: italic;
+}
 
 
 /*
@@ -123,7 +177,7 @@ html {
 	}
 }
 
-/* Bilder über volle Breite */
+/* Bilder ab einer gewissen Grenze über volle Breite */
 @media screen and (max-width: 600px){
 	figure {
 		width: 100%;
@@ -147,19 +201,13 @@ html {
 
 /* Titel */
 h2 {
-	font-size: 5em;
+	font-size: 4.5em;
 	line-height: 1.25;
 	margin-top: 0.75em;
 }
 .header {
-	height: 100vh;
 	position: relative;
-}
-.header p {
-	font-size: 1.7em;
-	line-height: 1.5;
-	position: absolute;
-	bottom: 1.25em;
+	padding: 2.5em 0;
 }
 figure figcaption {
 	font-size: 0.8em;

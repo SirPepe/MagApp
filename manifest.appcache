@@ -1,0 +1,23 @@
+CACHE MANIFEST
+
+# Version 1
+
+CACHE:
+MagApp.css
+MagApp.js
+img/ApolloContent.jpg
+img/GeminiContent.jpg
+img/MercuryContent.jpg
+img/ShuttleContent.jpg
+img/ApolloTitle.jpg
+img/GeminiTitle.jpg
+img/MercuryTitle.jpg
+img/ShuttleTitle.jpg
+lib/base.css
+lib/hammer.min.js
+lib/jquery-2.0.0.min.js
+lib/prefixfree.min.js
+
+
+NETWORK:
+*

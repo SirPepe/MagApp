@@ -1,10 +1,12 @@
 MagApp
 ======
 
+Super-Simple HTML5/CSS3-Magazin-App für Workshops.
+
 Anforderungen
 -------------
 
-TBD
+* Lokaler Webserver
 
 Features/Programm
 -----------------

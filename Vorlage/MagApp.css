@@ -1,0 +1,60 @@
+/*
+ * Seiten-Umschalter
+ * -----------------
+ */
+
+
+
+
+
+/*
+ * Schönere Titel
+ * --------------
+ */
+
+
+
+
+
+/*
+ * Detailtypografie
+ * ----------------
+ */
+
+
+
+
+
+/*
+ * Anpassung für schmalere Bildschirme
+ * -----------------------------------
+ */
+
+
+
+
+
+/*
+ * Basis-Styles
+ * ------------
+ */
+
+/* Schrift-Grundlagen */
+html {
+	font-size: 2.8vmin;
+	line-height: 1.65;
+}
+
+/* Titel */
+h2 {
+	font-size: 4.5em;
+	line-height: 1.25;
+	margin-top: 0.75em;
+}
+.header {
+	position: relative;
+	padding: 2.5em 0;
+}
+figure figcaption {
+	font-size: 0.8em;
+}
